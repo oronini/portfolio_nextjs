@@ -1,0 +1,77 @@
+.line {
+  width: 100vw;
+  height: 80px;
+  border-bottom: 1px solid #333;
+  position: absolute;
+  top: 160px;
+  left: -100vw;
+  transition: ease-in-out 0.5s;
+  z-index: 0;
+  animation: lineSlide 1s linear 1s 1 normal forwards,
+    lineRoute 0.5s ease-out 2.5s normal forwards;
+
+  @media (max-width: 768px) {
+    top: 140px;
+    animation: lineSlide 1s linear 1s 1 normal forwards,
+      lineRouteTab 0.5s ease-out 2.5s normal forwards;
+  }
+
+  @media (max-width: 468px) {
+    top: 140px;
+    animation: lineSlide 1s linear 1s 1 normal forwards,
+      lineRouteSp 0.5s ease-out 2.5s normal forwards;
+  }
+}
+
+@keyframes lineSlide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes lineRoute {
+  100% {
+    transform: rotate(-4deg);
+    top: 145px;
+  }
+}
+
+@keyframes lineRouteTab {
+  100% {
+    transform: rotate(-4deg);
+    top: 129px;
+  }
+}
+
+@keyframes lineRouteSp {
+  100% {
+    transform: rotate(-5deg);
+    top: 132px;
+  }
+}
+
+.wrap {
+  position: relative;
+  z-index: 5;
+  margin-top: 9.6rem;
+
+  @media (max-width: 768px) {
+    margin-top: 8rem;
+  }
+
+  .text_wrap {
+    margin-top: 8rem;
+    font-size: 1.5rem;
+    font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
+      'メイリオ', Meiryo, sans-serif;
+
+    .annotation {
+      margin-top: 1.6rem;
+
+      & span {
+        color: #ff3838;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
