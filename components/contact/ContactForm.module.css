@@ -1,0 +1,88 @@
+.wrap {
+  margin-top: 3.2rem;
+  padding-left: 0.8rem;
+  padding-bottom: 1.6rem;
+
+  & form {
+    max-width: 400px;
+    width: 100%;
+    font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
+      'メイリオ', Meiryo, sans-serif;
+
+    @media (max-width: 768px) {
+      width: 85%;
+    }
+
+    & dt {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+      padding-left: 0.4rem;
+      color: #6e6e6e;
+      font-size: 1.5rem;
+
+      & span {
+        /* margin-left: 0.4rem; */
+        color: #ff3838;
+        font-size: 1.2rem;
+        /* font-weight: bold; */
+      }
+    }
+
+    & dd {
+      margin-top: 0.4rem;
+
+      & input {
+        width: 100%;
+        height: 36px;
+        padding-block: 0.4rem;
+        padding-left: 16px;
+        outline: none;
+        background-color: #f9feff;
+        /* background-color: #fff; */
+        /* border-radius: 10px; */
+        box-shadow: inset 2px 2px 5px 0px #a3a9bf,
+          inset -5px -5px 10px 0px #c0e9ff1b;
+        border-radius: 8px;
+        font-size: 1.6rem;
+      }
+
+      & textarea {
+        width: 100%;
+        min-height: 200px;
+        padding: 0.8rem 1.6rem;
+        background-color: #f9feff;
+        outline: none;
+        /* background-color: #fff; */
+
+        /* box-shadow: inset 2px 2px 5px 0px #babecc,
+        inset -5px -5px 10px 0px #f6fcffa6; */
+        box-shadow: inset 2px 2px 5px 0px #a3a9bf,
+          inset -5px -5px 10px 0px #c0e9ff1b;
+        border-radius: 10px;
+        resize: none;
+      }
+    }
+
+    & button {
+      margin-top: 1.6rem;
+      display: block;
+      height: 40px;
+      width: 100px;
+      border-radius: 10px;
+      background-color: #f9feff;
+      outline: none;
+      /* background-color: #fff; */
+      box-shadow: -4px -4px 10px #adcad81b, 3px 3px 9px #01163f31;
+      transition: all 0.3s;
+      color: #666666;
+      letter-spacing: 1.5px;
+
+      &:hover,
+      &:focus {
+        box-shadow: -2px -2px 5px #adcad81b, 1px 1px 5px #01163f34;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.item {
+  font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
+    'メイリオ', Meiryo, sans-serif;
+  font-size: 1.5rem;
+
+  & a {
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .img_wrap {
+    border: 1px solid #ccc;
+  }
+
+  .home_title_link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2.4rem;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 1.6rem;
+    }
+
+    .title {
+      display: inline;
+      font-size: 1.6rem;
+    }
+
+    .icon_wrap {
+      margin-left: 0.8rem;
+    }
+  }
+
+  .title_link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 4.8rem;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    .title {
+      display: inline;
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+
+    .icon_wrap {
+      margin-left: 0.8rem;
+    }
+  }
+
+  .home_text {
+    margin-top: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+
+    @media (max-width: 768px) {
+      margin-top: 0.8rem;
+    }
+  }
+
+  .skills,
+  .text {
+    margin-top: 2.4rem;
+
+    @media (max-width: 768px) {
+      margin-top: 1.6rem;
+    }
+  }
+
+  .text {
+    white-space: pre-wrap;
+  }
+}

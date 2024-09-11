@@ -1,0 +1,48 @@
+.section {
+  margin-top: 11.2rem;
+
+  .wrap {
+    width: 80%;
+    margin-top: -2rem;
+    margin-inline: auto;
+    padding: 6.4rem 0 3.2rem;
+    background-color: #ebeff4;
+    border-radius: 2px;
+    text-align: center;
+    font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
+      'メイリオ', Meiryo, sans-serif;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      padding-inline: 2.4rem;
+    }
+
+    .link_btn {
+      display: inline-block;
+      width: 335px;
+      padding-block: 1.6rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.5rem;
+      border-radius: 10px;
+      box-shadow: -4px -4px 8px #fff, 4px 4px 8px rgb(0 0 0 / 24%);
+      transition: all 0.3s;
+
+      @media (max-width: 768px) {
+        width: 90%;
+        max-width: 335px;
+        letter-spacing: 0;
+        font-size: 1.8rem;
+      }
+
+      &:hover {
+        box-shadow: -2px -2px 4px #fff, 2px 2px 4px rgb(0 0 0 / 24%);
+      }
+    }
+
+    .text_wrap {
+      margin-top: 3.2rem;
+      line-height: 2;
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.circle_rainbow:hover {
+  background-image: linear-gradient(25deg, #ff8800, #ff2bff, #0014f4);
+}
+
+.circle_green:hover {
+  background-color: #05c755;
+
+  img {
+    transform: translateY(1px);
+  }
+}
+
+.circle_black:hover,
+.circle_black__s:hover {
+  background-color: #333;
+}
+
+.circle_black__s div {
+  width: 28px !important;
+
+  @media (max-width: 768px) {
+    width: 23px !important;
+  }
+}
+
+.circle_red div {
+  width: 35px !important;
+
+  @media (max-width: 768px) {
+    width: 30px !important;
+  }
+}
+
+.circle_red:hover {
+  background-color: #fe1f12;
+}

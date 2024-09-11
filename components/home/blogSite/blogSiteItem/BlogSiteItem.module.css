@@ -1,0 +1,45 @@
+.item_wrap {
+  width: 100%;
+
+  @media (max-width: 768px) {
+    margin-top: 2.4rem;
+  }
+
+  .img_wrap {
+    border: 1px solid #ccc;
+  }
+
+  .date {
+    margin-top: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .text {
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+    font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
+      'メイリオ', Meiryo, sans-serif;
+    line-height: 1.5;
+  }
+
+  .link_wrap {
+    margin-top: 0.8rem;
+    text-align: right;
+
+    .link {
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s;
+      font-size: 1.5rem;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      .icon_wrap {
+        margin-left: 0.4rem;
+        padding-top: 3px;
+      }
+    }
+  }
+}

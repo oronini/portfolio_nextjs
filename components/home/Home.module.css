@@ -1,0 +1,76 @@
+.main_visual_wrap {
+  position: relative;
+
+  .main_visual {
+    max-width: 980px;
+    aspect-ratio: 311/196;
+    margin: 1.6rem 3% 0 0;
+    background-image: url(../../public/img/home/mv.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    @media (max-width: 768px) {
+      height: 70vh;
+      aspect-ratio: inherit;
+      background-position: -120px -10px;
+      margin-right: 5%;
+    }
+
+    .line {
+      background-color: #f9feff;
+      /* background-color: #757575; */
+      width: 102%;
+      height: 25%;
+      position: absolute;
+    }
+
+    .title {
+      position: absolute;
+      bottom: 50%;
+      right: 104px;
+      font-size: 4.8rem;
+      font-weight: 100;
+      transform: translateY(50%);
+
+      @media (max-width: 768px) {
+        right: 4.8rem;
+        bottom: 15%;
+        transform: translateY(0);
+        font-size: 3.2rem;
+      }
+
+      .sub_title {
+        display: block;
+        margin-top: 0.8rem;
+        margin-right: -5.6rem;
+        text-align: right;
+        font-size: 2rem;
+        font-weight: 400;
+        color: #757575;
+        font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic,
+          HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
+
+        @media (max-width: 768px) {
+          font-size: 1.6rem;
+          margin-right: -3.2rem;
+          /* margin-top: 0.8rem; */
+        }
+      }
+    }
+  }
+
+  .main_visual_shadow {
+    width: 97%;
+    height: 100%;
+    background-color: #ccc;
+    filter: blur(5px);
+    position: absolute;
+    z-index: -1;
+
+    @media (max-width: 768px) {
+      left: 5%;
+      height: 97%;
+    }
+  }
+}

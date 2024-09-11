@@ -1,0 +1,23 @@
+.menu_is_active {
+  width: 350px !important;
+}
+
+.line_top {
+  top: 9px !important;
+  transform: rotate(45deg);
+  background-color: #333 !important;
+}
+
+.line_med {
+  width: 0 !important;
+
+  & div::before {
+    opacity: 0;
+  }
+}
+
+.line_bottom {
+  bottom: 9px !important;
+  transform: rotate(-45deg);
+  background-color: #333 !important;
+}

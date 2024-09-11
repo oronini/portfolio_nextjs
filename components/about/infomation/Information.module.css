@@ -1,0 +1,131 @@
+.wrap {
+  --ff-ja: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
+    'メイリオ', Meiryo, sans-serif;
+
+  padding-left: 4rem;
+  padding-bottom: 4rem;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding-left: 3.2rem;
+  }
+
+  &::before {
+    content: '';
+    width: 1px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    top: 18px;
+    left: 8px;
+    animation: lineSlide 3.5s ease-out 5.5s 1 normal forwards;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    margin-top: 2.4rem;
+    margin-left: 3.2rem;
+    font-size: 1.5rem;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      grid-template-columns: 1fr;
+    }
+
+    .dt {
+      border-bottom: 1px solid #ccc;
+      padding-block: 2.4rem;
+      text-align: right;
+      font-family: var(--ff-ja);
+
+      @media (max-width: 768px) {
+        text-align: left;
+        border: none;
+        padding: 1.6rem 1.6rem 0;
+        font-weight: 600;
+      }
+    }
+
+    .dd {
+      border-bottom: 1px solid #ccc;
+      padding-block: 2.4rem;
+      padding-left: 2.4rem;
+      font-family: var(--ff-ja);
+
+      @media (max-width: 768px) {
+        padding: 0.8rem 1.6rem 1.6rem 2.4rem;
+      }
+
+      .skill_wrap {
+        &:nth-of-type(n + 2) {
+          margin-top: 2.4rem;
+
+          @media (max-width: 768px) {
+            margin-top: 1.6rem;
+          }
+        }
+
+        .skill_title {
+          padding-left: 1.6rem;
+          position: relative;
+
+          &::before {
+            content: '';
+            width: 10px;
+            height: 1px;
+            background-color: #333;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+          }
+        }
+
+        .skill_list {
+          margin-top: 0.8rem;
+
+          @media (max-width: 768px) {
+            margin-top: 0.4rem;
+          }
+        }
+      }
+
+      .skill_list,
+      .hobby_list {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+
+        .skill_item,
+        .hobby_item {
+          position: relative;
+
+          &::after {
+            content: '/';
+            margin-inline: 0.4rem;
+          }
+
+          @media (max-width: 768px) {
+            &::after {
+              content: none;
+            }
+          }
+
+          &:last-child::after {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes lineSlide {
+  100% {
+    height: 100%;
+  }
+}

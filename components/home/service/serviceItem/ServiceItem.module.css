@@ -1,0 +1,54 @@
+.content {
+  --ff-ja: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
+    'メイリオ', Meiryo, sans-serif;
+
+  width: 29%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    &:nth-of-type(n + 2) {
+      margin-top: 4rem;
+    }
+  }
+
+  .title {
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-align: center;
+
+    .sub_title {
+      display: block;
+      margin-top: 0.8rem;
+      font-size: 1.6rem;
+      color: #757575;
+      font-weight: normal;
+      font-family: var(--ff-ja);
+    }
+  }
+
+  .img_wrap {
+    margin-top: 3.2rem;
+    max-width: 100%;
+
+    @media (max-width: 768px) {
+      max-width: 20%;
+      margin-top: 2.4rem;
+    }
+  }
+
+  .text {
+    width: 100%;
+    margin-top: 4.8rem;
+    font-family: var(--ff-ja);
+    font-size: 1.4rem;
+    line-height: 2;
+
+    @media (max-width: 768px) {
+      margin-top: 3.2rem;
+    }
+  }
+}
