@@ -38,3 +38,9 @@ type iconsArrayType = {
   alt: string;
   className: string;
 };
+
+type MenuItem = {
+  href: string;
+  text: string;
+  icon?: string;
+};

@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const iconPath = 'img/icons/newTabOp.svg';
 
-const linkArray = [
+const linkArray: MenuItem[] = [
   { href: '/', text: 'Top' },
   { href: '/about', text: 'About Me' },
   { href: '/production', text: 'Production' },
