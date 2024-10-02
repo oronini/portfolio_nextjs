@@ -2,7 +2,7 @@ import ServiceSection from '@/components/home/service/ServiceSection';
 import styles from '../components/home/Home.module.css';
 import About from '@/components/home/about/About';
 import Production from '@/components/home/production/Production';
-import BlogSite from '@/components/home/blogSite/BlogSite';
+// import BlogSite from '@/components/home/blogSite/BlogSite';
 import Contact from '@/components/home/contact/Contact';
 import '../components/home/MvAnimation.css';
 

@@ -3,12 +3,11 @@ import { Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/common/header/Header';
 import Footer from '@/components/common/footer/Footer';
-import HamburgerMenu from '@/components/common/header/hamburgerMenu/HamburgerMenu';
 const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'KM Portfolio',
-  description: 'KM Portfolio',
+  title: 'MK Portfolio',
+  description: 'MK Portfolio',
 };
 
 export default function RootLayout({

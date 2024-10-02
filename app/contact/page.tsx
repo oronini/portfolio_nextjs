@@ -4,8 +4,8 @@ import styles from './Contact.module.css';
 import ContactForm from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'KM Contact',
-  description: 'KM Contact',
+  title: 'MK Portfolio | Contact',
+  description: 'MK Portfolio | Contact',
 };
 
 const page = () => {

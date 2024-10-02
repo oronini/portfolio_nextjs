@@ -6,8 +6,8 @@ import Information from '@/components/about/infomation/Information';
 import SocialMedia from '@/components/about/socialMedia/SocialMedia';
 
 export const metadata: Metadata = {
-  title: 'KM About Me',
-  description: 'KM About Me',
+  title: 'MK Portfolio | About Me',
+  description: 'MK Portfolio | About Me',
 };
 
 const page = () => {

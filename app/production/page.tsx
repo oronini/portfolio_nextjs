@@ -5,8 +5,8 @@ import ProductionItem from '@/components/production/ProductionItem';
 import { productionItemArray } from '@/lib/productionItem';
 
 export const metadata: Metadata = {
-  title: 'KM Production',
-  description: 'KM Production',
+  title: 'MK Portfolio | Production',
+  description: 'MK Portfolio | Production',
 };
 
 const page = () => {
