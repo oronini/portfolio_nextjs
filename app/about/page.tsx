@@ -2,8 +2,8 @@ import PagesTitle from '@/components/common/parts/Titles/PagesTitle';
 import { Metadata } from 'next';
 import styles from './About.module.css';
 import Profile from '@/components/about/profile/Profile';
-import Information from '@/components/about/infomation/Information';
 import SocialMedia from '@/components/about/socialMedia/SocialMedia';
+import Information from '@/components/about/information/Information';
 
 export const metadata: Metadata = {
   title: 'MK Portfolio | About Me',
