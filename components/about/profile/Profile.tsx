@@ -4,7 +4,7 @@ import AboutHeading from '@/components/common/parts/aboutHeading/AboutHeading';
 
 const Profile = () => {
   return (
-    <section>
+    <section data-reveal>
       <div className={styles.wrap}>
         <AboutHeading text="Hey! I&#39;m Web Developer" />
         <div className={styles.content}>

@@ -120,6 +120,32 @@
           }
         }
       }
+
+      /* スキルはタグ表示。ホバーで反転する */
+      .skill_list {
+        flex-direction: row;
+        gap: 0.8rem;
+
+        .skill_item {
+          padding: 0.4rem 1.4rem;
+          border: 1px solid #ccc;
+          border-radius: 999px;
+          font-size: 1.3rem;
+          transition: background-color 0.3s, color 0.3s, border-color 0.3s,
+            transform 0.3s;
+
+          &::after {
+            content: none;
+          }
+
+          &:hover {
+            background-color: #333;
+            border-color: #333;
+            color: #fff;
+            transform: translateY(-2px);
+          }
+        }
+      }
     }
   }
 }

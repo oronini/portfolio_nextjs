@@ -1,0 +1,59 @@
+.scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 4.8rem;
+  /* ヒーローの演出(約5.4s)が終わってから表示する */
+  opacity: 0;
+  animation: fadeIn 1s ease 5.8s forwards;
+
+  .label {
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    color: #757575;
+  }
+
+  .line {
+    width: 2px;
+    height: 60px;
+    overflow: visible;
+
+    line {
+      stroke: #333;
+      stroke-width: 1;
+      stroke-dasharray: 60;
+      animation: scrollLine 2.4s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    stroke-dashoffset: 60;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -60;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll {
+    opacity: 1;
+    animation: none;
+
+    .line line {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+  }
+}

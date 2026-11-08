@@ -7,7 +7,7 @@ const imagePath = '/img/home/aboutIcon.png';
 
 const About = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-reveal>
       <SectionTitle title="About Me" subTitle="私について" />
       <div className={styles.content}>
         <div className={styles.text_wrap}>

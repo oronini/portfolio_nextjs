@@ -9,7 +9,7 @@ const ServiceItem = ({
   text,
 }: ServiceSectionProps) => {
   return (
-    <section className={styles.content}>
+    <section className={styles.content} data-reveal>
       <h4 className={styles.title}>
         {title}
         <span className={styles.sub_title}>{subTitle}</span>

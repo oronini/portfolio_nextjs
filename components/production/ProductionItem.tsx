@@ -16,7 +16,7 @@ const ProductionItem = ({
   home,
 }: ProductionProps) => {
   return (
-    <li className={styles.item}>
+    <li className={styles.item} data-reveal>
       <Link href={linkHref} rel="noopener noreferrer" target="_blank">
         <div className={styles.img_wrap}>
           <Image

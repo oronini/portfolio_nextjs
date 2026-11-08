@@ -4,7 +4,7 @@ import { hobbyArray, skillArray } from '@/lib/information';
 
 const Information = () => {
   return (
-    <section>
+    <section data-reveal>
       <div className={styles.wrap}>
         <AboutHeading text="Information" />
         <dl className={styles.content}>

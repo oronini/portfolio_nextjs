@@ -3,15 +3,27 @@
     'メイリオ', Meiryo, sans-serif;
   font-size: 1.5rem;
 
-  & a {
-    transition: all 0.3s;
-    &:hover {
-      opacity: 0.8;
-    }
+  /* 横並びのカードが少しずつずれて表示される */
+  &:nth-child(3n + 2) {
+    --reveal-delay: 120ms;
+  }
+  &:nth-child(3n + 3) {
+    --reveal-delay: 240ms;
   }
 
   .img_wrap {
     border: 1px solid #ccc;
+    overflow: hidden;
+
+    img {
+      display: block;
+      transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+  }
+
+  /* ホバーで画像がゆっくり拡大する */
+  &:hover .img_wrap img {
+    transform: scale(1.06);
   }
 
   .home_title_link {
@@ -19,8 +31,21 @@
     align-items: center;
     margin-top: 2.4rem;
 
-    &:hover {
-      opacity: 0.6;
+    .title {
+      background-image: linear-gradient(currentColor, currentColor);
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      background-size: 0 1px;
+      padding-bottom: 2px;
+      transition: background-size 0.5s ease;
+    }
+
+    &:hover .title {
+      background-size: 100% 1px;
+    }
+
+    &:hover .icon_wrap {
+      transform: translate(3px, -3px);
     }
 
     @media (max-width: 768px) {
@@ -34,6 +59,7 @@
 
     .icon_wrap {
       margin-left: 0.8rem;
+      transition: transform 0.3s ease;
     }
   }
 
@@ -42,8 +68,21 @@
     align-items: center;
     margin-top: 4.8rem;
 
-    &:hover {
-      opacity: 0.6;
+    .title {
+      background-image: linear-gradient(currentColor, currentColor);
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      background-size: 0 1px;
+      padding-bottom: 2px;
+      transition: background-size 0.5s ease;
+    }
+
+    &:hover .title {
+      background-size: 100% 1px;
+    }
+
+    &:hover .icon_wrap {
+      transform: translate(3px, -3px);
     }
 
     .title {
@@ -54,6 +93,7 @@
 
     .icon_wrap {
       margin-left: 0.8rem;
+      transition: transform 0.3s ease;
     }
   }
 

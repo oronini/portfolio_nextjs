@@ -9,7 +9,7 @@ const imagePath = 'img/about/socialMediaIcons/';
 
 const SocialMedia = () => {
   return (
-    <section>
+    <section data-reveal>
       <div className={styles.wrap}>
         <AboutHeading text="Social Media" />
         <div className={styles.icons_wrap}>

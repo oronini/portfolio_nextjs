@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Contact = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-reveal>
       <ServiceContactSectionTitle title="Contact" />
       <div className={styles.wrap}>
         <Link href={'/contact'} className={styles.link_btn}>

@@ -22,3 +22,35 @@
     }
   }
 }
+
+/* 見出し下の手描き風の線。画面に入ると左から描かれる */
+.underline {
+  display: block;
+  width: 24rem;
+  max-width: 60%;
+  height: 1.4rem;
+  margin-top: 1.2rem;
+  overflow: visible;
+
+  path {
+    fill: none;
+    stroke: #333;
+    stroke-width: 1;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 1.4s ease 0.4s;
+  }
+}
+
+.title[data-inview='true'] .underline path {
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .underline path {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+}

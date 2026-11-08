@@ -5,6 +5,8 @@ import Production from '@/components/home/production/Production';
 // import BlogSite from '@/components/home/blogSite/BlogSite';
 import Contact from '@/components/home/contact/Contact';
 import HeroVisual from '@/components/home/heroVisual/HeroVisual';
+import SkillMarquee from '@/components/home/skillMarquee/SkillMarquee';
+import ScrollIndicator from '@/components/home/scrollIndicator/ScrollIndicator';
 import '../components/home/MvAnimation.css';
 
 export default function Home() {
@@ -27,8 +29,10 @@ export default function Home() {
           className={`${styles.main_visual_shadow} animation_mvShadow`}
         ></div>
       </div>
+      <ScrollIndicator />
       <main>
         <ServiceSection />
+        <SkillMarquee />
         <About />
         <Production />
         {/* <BlogSite /> */}
