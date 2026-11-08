@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './ProductionItem.module.css';
 import Image from 'next/image';
+import ScatterText from '@/components/common/parts/scatterText/ScatterText';
 
 const iconPath = 'img/icons/newTabOp.svg';
 const imagePath = '/img/production/';
@@ -34,9 +35,13 @@ const ProductionItem = ({
         target="_blank"
       >
         {home ? (
-          <h4 className={styles.title}>{title}</h4>
+          <h4 className={styles.title}>
+            <ScatterText text={title} />
+          </h4>
         ) : (
-          <h3 className={styles.title}>{title}</h3>
+          <h3 className={styles.title}>
+            <ScatterText text={title} />
+          </h3>
         )}
         <div className={styles.icon_wrap}>
           <Image
@@ -47,9 +52,15 @@ const ProductionItem = ({
           />
         </div>
       </Link>
-      {home ? '' : <p className={styles.skills}>{skills}</p>}
+      {home ? (
+        ''
+      ) : (
+        <p className={styles.skills}>
+          <ScatterText text={skills ?? ''} />
+        </p>
+      )}
       <p className={home ? styles.home_text : styles.text}>
-        {home ? topText : pageText}
+        <ScatterText text={(home ? topText : pageText) ?? ''} />
       </p>
     </li>
   );

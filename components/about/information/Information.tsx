@@ -1,5 +1,6 @@
 import AboutHeading from '@/components/common/parts/aboutHeading/AboutHeading';
 import styles from './Information.module.css';
+import ScatterText from '@/components/common/parts/scatterText/ScatterText';
 import { hobbyArray, skillArray } from '@/lib/information';
 
 const Information = () => {
@@ -8,10 +9,18 @@ const Information = () => {
       <div className={styles.wrap}>
         <AboutHeading text="Information" />
         <dl className={styles.content}>
-          <dt className={styles.dt}>所在地</dt>
-          <dd className={styles.dd}>東京都</dd>
-          <dt className={styles.dt}>出身地</dt>
-          <dd className={styles.dd}>大阪府枚方市</dd>
+          <dt className={styles.dt}>
+            <ScatterText text="所在地" />
+          </dt>
+          <dd className={styles.dd}>
+            <ScatterText text="東京都" />
+          </dd>
+          <dt className={styles.dt}>
+            <ScatterText text="出身地" />
+          </dt>
+          <dd className={styles.dd}>
+            <ScatterText text="大阪府枚方市" />
+          </dd>
           <dt className={styles.dt}>開発スキル / 環境</dt>
           <dd className={styles.dd}>
             {skillArray.map((item) => (
@@ -27,12 +36,14 @@ const Information = () => {
               </div>
             ))}
           </dd>
-          <dt className={styles.dt}>趣味</dt>
+          <dt className={styles.dt}>
+            <ScatterText text="趣味" />
+          </dt>
           <dd className={styles.dd}>
             <ul className={styles.hobby_list}>
               {hobbyArray.map((item) => (
                 <li className={styles.hobby_item} key={item}>
-                  {item}
+                  <ScatterText text={item} />
                 </li>
               ))}
             </ul>

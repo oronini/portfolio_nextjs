@@ -4,6 +4,7 @@ import About from '@/components/home/about/About';
 import Production from '@/components/home/production/Production';
 // import BlogSite from '@/components/home/blogSite/BlogSite';
 import Contact from '@/components/home/contact/Contact';
+import ScatterText from '@/components/common/parts/scatterText/ScatterText';
 import HeroVisual from '@/components/home/heroVisual/HeroVisual';
 import SkillMarquee from '@/components/home/skillMarquee/SkillMarquee';
 import ScrollIndicator from '@/components/home/scrollIndicator/ScrollIndicator';
@@ -19,9 +20,9 @@ export default function Home() {
           <div className={`${styles.line} animation_line3`}></div>
           <div className={`${styles.line} animation_line4`}></div>
           <h2 className={`${styles.title} animation_text1`}>
-            Keep&nbsp;Thinking
+            <ScatterText text="Keep Thinking" delayMs={2000} />
             <span className={`${styles.sub_title} animation_text2`}>
-              考え続ける
+              <ScatterText text="考え続ける" delayMs={3000} />
             </span>
           </h2>
         </HeroVisual>

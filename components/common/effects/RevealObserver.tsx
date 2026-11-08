@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 
 /**
- * data-reveal を持つ要素が画面に入ったら data-inview="true" を付ける。
+ * data-reveal / data-scatter を持つ要素が画面に入ったら data-inview="true" を付ける。
  * 見た目の制御は globals.css の [data-reveal] で行う。
  * ページ遷移などで DOM が差し替わっても、MutationObserver で新しい要素を拾う。
  */
@@ -22,7 +22,9 @@ const RevealObserver = () => {
 
     const scan = () => {
       document
-        .querySelectorAll<HTMLElement>('[data-reveal]:not([data-inview])')
+        .querySelectorAll<HTMLElement>(
+          '[data-reveal]:not([data-inview]), [data-scatter]:not([data-inview])',
+        )
         .forEach((el) => io.observe(el));
     };
     scan();
