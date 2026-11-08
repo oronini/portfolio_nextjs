@@ -12,8 +12,9 @@
   display: inline-block;
   opacity: 0;
   transform: translate(var(--x), var(--y)) rotate(var(--r));
-  transition: opacity 0.8s ease calc(var(--d) + var(--base, 0ms)),
-    transform 1.4s cubic-bezier(0.16, 0.84, 0.24, 1)
+  /* 飛んでくる途中が見えるよう、先に不透明にして、移動は緩やかに減速させる */
+  transition: opacity 0.35s ease calc(var(--d) + var(--base, 0ms)),
+    transform 2s cubic-bezier(0.3, 0.55, 0.25, 1)
       calc(var(--d) + var(--base, 0ms));
 }
 
@@ -22,10 +23,34 @@
   transform: none;
 }
 
+/* auto: 読み込みの速さに関係なく、ページ表示から数えて同じタイミングで動く */
+.auto .char {
+  transition: none;
+  animation: scatterIn 2s cubic-bezier(0.3, 0.55, 0.25, 1) both;
+  animation-delay: calc(var(--d) + var(--base, 0ms));
+}
+
+@keyframes scatterIn {
+  0% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) rotate(var(--r));
+  }
+  /* 飛んでくる途中が見えるよう、先に不透明にする */
+  8% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .char {
+  .char,
+  .auto .char {
     opacity: 1;
     transform: none;
     transition: none;
+    animation: none;
   }
 }

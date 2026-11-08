@@ -19,10 +19,10 @@ export default function Home() {
           <div className={`${styles.line} animation_line2`}></div>
           <div className={`${styles.line} animation_line3`}></div>
           <div className={`${styles.line} animation_line4`}></div>
-          <h2 className={`${styles.title} animation_text1`}>
-            <ScatterText text="Keep Thinking" delayMs={2000} />
-            <span className={`${styles.sub_title} animation_text2`}>
-              <ScatterText text="考え続ける" delayMs={3000} />
+          <h2 className={styles.title}>
+            <ScatterText text="Keep Thinking" delayMs={3300} auto />
+            <span className={styles.sub_title}>
+              <ScatterText text="考え続ける" delayMs={4300} auto />
             </span>
           </h2>
         </HeroVisual>

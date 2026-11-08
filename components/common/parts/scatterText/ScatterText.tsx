@@ -11,6 +11,8 @@ type Props = {
   softBreakClassName?: string;
   // 集まり始めるまでの待ち時間(ms)。入場演出のあるヒーローなどで使う
   delayMs?: number;
+  // true のとき、画面に入るのを待たず、ページ表示から数えて自動で始まる(ヒーロー用)
+  auto?: boolean;
 };
 
 const textToLines = (text: string): Line[] => {
@@ -65,14 +67,15 @@ const ScatterText = ({
   text,
   softBreakClassName,
   delayMs = 0,
+  auto = false,
 }: Props) => {
   const lines = linesProp ?? textToLines(text ?? '');
   let index = 0;
 
   return (
     <span
-      className={styles.root}
-      data-scatter
+      className={`${styles.root} ${auto ? styles.auto : ''}`}
+      {...(auto ? {} : { 'data-scatter': true })}
       style={{ '--base': `${delayMs}ms` } as React.CSSProperties}
     >
       <span className="sr-only">{lines.map(([text]) => text).join('')}</span>
