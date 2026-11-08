@@ -1,0 +1,31 @@
+.root {
+  display: inline;
+}
+
+/* 句読点を含むかたまりは途中で改行しない */
+.group {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translate(var(--x), var(--y)) rotate(var(--r));
+  transition: opacity 0.8s ease calc(var(--d) + var(--base, 0ms)),
+    transform 1.4s cubic-bezier(0.16, 0.84, 0.24, 1)
+      calc(var(--d) + var(--base, 0ms));
+}
+
+.root[data-inview='true'] .char {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .char {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

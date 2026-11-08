@@ -45,3 +45,45 @@ button {
   padding-inline: 1.6rem;
   overflow: hidden;
 }
+
+/* ---- スクロール表示(RevealObserver が data-inview を付ける) ---- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal][data-inview='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- ページ遷移 ---- */
+.page_enter {
+  animation: pageEnter 0.6s ease both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 動きを減らす設定のときは、演出を出さず内容だけ表示する */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .page_enter {
+    animation: none;
+  }
+}

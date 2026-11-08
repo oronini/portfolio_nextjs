@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './HomeLink.module.css';
 import Image from 'next/image';
+import ScatterText from '../scatterText/ScatterText';
 type Props = {
   linkText: string;
   href: string;
@@ -17,7 +18,9 @@ const HomeLink = ({ linkText, href, blogSite }: Props) => {
       className={styles.link}
       {...(blogSite ? { rel: 'noopener noreferrer', target: '_blank' } : {})}
     >
-      <p>{linkText}</p>
+      <p>
+        <ScatterText text={linkText} />
+      </p>
       {blogSite ? (
         <div className={styles.icon_wrap}>
           <Image

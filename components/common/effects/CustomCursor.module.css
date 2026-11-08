@@ -1,0 +1,47 @@
+.ring,
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  /* 明るい背景では暗く、暗い要素の上では明るく見える */
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &[data-visible='true'] {
+    opacity: 1;
+  }
+}
+
+.ring_inner,
+.dot_inner {
+  display: block;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring_inner {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #fff;
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.ring[data-active='true'] .ring_inner {
+  width: 64px;
+  height: 64px;
+  background-color: rgb(255 255 255 / 0.25);
+}
+
+.ring[data-pressed='true'] .ring_inner {
+  width: 24px;
+  height: 24px;
+}
+
+.dot_inner {
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+}

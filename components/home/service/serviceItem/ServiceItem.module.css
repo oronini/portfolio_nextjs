@@ -7,6 +7,16 @@
   flex-direction: column;
   align-items: center;
 
+  /* 3つが少しずつずれて表示される */
+  &:nth-of-type(2) {
+    --reveal-delay: 150ms;
+    --wave-index: 1;
+  }
+  &:nth-of-type(3) {
+    --reveal-delay: 300ms;
+    --wave-index: 2;
+  }
+
   @media (max-width: 768px) {
     width: 100%;
 
@@ -33,6 +43,11 @@
   .img_wrap {
     margin-top: 3.2rem;
     max-width: 100%;
+    img {
+      animation: wave 4.8s ease-in-out infinite;
+      /* 3つの動きを少しずつずらして、波打つように見せる */
+      animation-delay: calc(var(--wave-index, 0) * -1.6s);
+    }
 
     @media (max-width: 768px) {
       max-width: 20%;
@@ -50,5 +65,27 @@
     @media (max-width: 768px) {
       margin-top: 3.2rem;
     }
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(3px, -7px) rotate(2deg);
+  }
+  50% {
+    transform: translate(0, -12px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-3px, -7px) rotate(-2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content .img_wrap img {
+    animation: none;
   }
 }

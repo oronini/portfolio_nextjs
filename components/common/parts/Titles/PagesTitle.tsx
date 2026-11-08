@@ -1,13 +1,18 @@
 import styles from './Titles.module.css';
+import TitleUnderline from './TitleUnderline';
+import ScatterText from '../scatterText/ScatterText';
 type Props = {
   title: string;
   subTitle: string;
 };
 const SectionTitle = ({ title, subTitle }: Props) => {
   return (
-    <h2 className={styles.title}>
-      {title}
-      <span className={styles.sub_title}>{subTitle}</span>
+    <h2 className={styles.title} data-reveal>
+      <ScatterText text={title} />
+      <span className={styles.sub_title}>
+        <ScatterText text={subTitle} />
+      </span>
+      <TitleUnderline />
     </h2>
   );
 };
