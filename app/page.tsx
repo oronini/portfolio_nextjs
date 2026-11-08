@@ -4,13 +4,14 @@ import About from '@/components/home/about/About';
 import Production from '@/components/home/production/Production';
 // import BlogSite from '@/components/home/blogSite/BlogSite';
 import Contact from '@/components/home/contact/Contact';
+import HeroVisual from '@/components/home/heroVisual/HeroVisual';
 import '../components/home/MvAnimation.css';
 
 export default function Home() {
   return (
     <>
       <div className={styles.main_visual_wrap}>
-        <div className={`${styles.main_visual} animation_mv`}>
+        <HeroVisual>
           <div className={`${styles.line} animation_line1`}></div>
           <div className={`${styles.line} animation_line2`}></div>
           <div className={`${styles.line} animation_line3`}></div>
@@ -21,7 +22,7 @@ export default function Home() {
               考え続ける
             </span>
           </h2>
-        </div>
+        </HeroVisual>
         <div
           className={`${styles.main_visual_shadow} animation_mvShadow`}
         ></div>
