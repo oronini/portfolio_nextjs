@@ -60,19 +60,34 @@ const ContactForm = () => {
     setOnLoad(true);
     scrollProperty();
 
-    await fetch('/api/postMail', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json, text/plain',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
+    try {
+      const res = await fetch('/api/postMail', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json, text/plain',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        alert('送信されました。');
+        // 失敗時は入力内容を残し、やり直せるようにする
+        reset();
+      } else if (res.status === 400) {
+        setIsDisabled(false);
+        alert('入力内容に誤りがあります。内容を確認してください。');
+      } else {
+        setIsDisabled(false);
+        alert('送信に失敗しました。時間をおいて再度お試しください。');
+      }
+    } catch {
+      setIsDisabled(false);
+      alert('送信に失敗しました。通信環境を確認して再度お試しください。');
+    } finally {
       setOnLoad(false);
-      if (res.status === 200) alert('送信されました。');
-      reset();
       scrollProperty();
-    });
+    }
   };
 
   return (
