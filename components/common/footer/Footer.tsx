@@ -16,10 +16,9 @@ const Footer = () => {
           <div className={styles.logo_warp}>
             <Logo />
           </div>
-          {/* <p className={styles.copyright}>
-            &copy; mikami,koji all rights reserved
-          </p> */}
-          <p className={styles.copyright}>&copy; m,k all rights reserved</p>
+          <p className={styles.copyright}>
+            &copy; Nekodesk all rights reserved
+          </p>
         </div>
       </div>
     </footer>

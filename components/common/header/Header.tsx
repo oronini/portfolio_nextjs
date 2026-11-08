@@ -14,7 +14,7 @@ const Header = () => {
               <Logo />
             </div>
             {/* <h1 className={styles.title}>Mikami Koji</h1> */}
-            <h1 className={styles.title}>M,K</h1>
+            <h1 className={styles.title}>Nekodesk</h1>
           </div>
         </Link>
         <HamburgerMenu />

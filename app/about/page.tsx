@@ -6,8 +6,8 @@ import SocialMedia from '@/components/about/socialMedia/SocialMedia';
 import Information from '@/components/about/information/Information';
 
 export const metadata: Metadata = {
-  title: 'MK Portfolio | About Me',
-  description: 'MK Portfolio | About Me',
+  title: 'Nekodesk Portfolio | About Me',
+  description: 'Nekodesk Portfolio | About Me',
 };
 
 const page = () => {
