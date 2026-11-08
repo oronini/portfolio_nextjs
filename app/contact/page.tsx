@@ -5,8 +5,8 @@ import ScatterText from '@/components/common/parts/scatterText/ScatterText';
 import ContactForm from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'MK Portfolio | Contact',
-  description: 'MK Portfolio | Contact',
+  title: 'Nekodesk Portfolio | Contact',
+  description: 'Nekodesk Portfolio | Contact',
 };
 
 const page = () => {

@@ -8,8 +8,8 @@ import CustomCursor from '@/components/common/effects/CustomCursor';
 const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'MK Portfolio',
-  description: 'MK Portfolio',
+  title: 'Nekodesk Portfolio',
+  description: 'Nekodesk Portfolio',
 };
 
 export default function RootLayout({

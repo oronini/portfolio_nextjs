@@ -5,8 +5,8 @@ import ProductionItem from '@/components/production/ProductionItem';
 import { productionItemArray } from '@/lib/productionItem';
 
 export const metadata: Metadata = {
-  title: 'MK Portfolio | Production',
-  description: 'MK Portfolio | Production',
+  title: 'Nekodesk Portfolio | Production',
+  description: 'Nekodesk Portfolio | Production',
 };
 
 const page = () => {
