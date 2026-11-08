@@ -31,7 +31,8 @@ export default function Home() {
         ></div>
       </div>
       <ScrollIndicator />
-      <main>
+      {/* ファーストビューに入っている要素も、最初のスクロールまで待ってから動かす */}
+      <main data-wait-scroll>
         <ServiceSection />
         <SkillMarquee />
         <About />
