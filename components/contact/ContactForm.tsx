@@ -29,6 +29,8 @@ const errorScheme = yup.object().shape({
         value === undefined || value === '' || telephoneRegex.test(value)
     ),
   text: yup.string().required('お問い合わせ内容が入力さていません。'),
+  // スパム対策の罠欄。人には見えないので空のままで、ボットが埋めた場合はサーバー側で破棄する
+  website: yup.string(),
 });
 
 type ContactFormData = yup.InferType<typeof errorScheme>;
@@ -146,6 +148,17 @@ const ContactForm = () => {
               )}
             </dd>
           </dl>
+          <div className={styles.hp} aria-hidden="true">
+            <label>
+              ウェブサイト(入力しないでください)
+              <input
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                {...register('website')}
+              />
+            </label>
+          </div>
           <button type="submit" disabled={isDisabled ? true : false}>
             送信する
           </button>

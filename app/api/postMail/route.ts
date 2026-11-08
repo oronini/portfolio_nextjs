@@ -59,6 +59,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: 'Invalid request' }, { status: 400 });
   }
 
+  // 罠欄(honeypot)が埋まっていたらボットとみなし、送信せずに成功を装って破棄する
+  if (
+    typeof body === 'object' &&
+    body !== null &&
+    'website' in body &&
+    body.website
+  ) {
+    return NextResponse.json(
+      { message: 'Mail sent successfully' },
+      { status: 200 }
+    );
+  }
+
   let data: yup.InferType<typeof mailSchema>;
   try {
     data = await mailSchema.validate(body, { stripUnknown: true });

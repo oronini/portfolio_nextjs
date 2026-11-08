@@ -86,3 +86,12 @@
     }
   }
 }
+
+/* 罠欄(honeypot)。display:none だと見抜くボットがいるため、画面外に出して隠す */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
