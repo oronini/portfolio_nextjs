@@ -12,17 +12,6 @@
     padding-left: 3.2rem;
   }
 
-  &::before {
-    content: '';
-    width: 1px;
-    height: 0;
-    background-color: #333;
-    position: absolute;
-    top: 18px;
-    left: 8px;
-    transition: height 2.4s ease-out 0.3s;
-  }
-
   .list {
     margin-top: 2.4rem;
     margin-left: 3.2rem;
@@ -103,6 +92,29 @@
     border: 1px solid #ccc;
     border-radius: 999px;
     font-size: 1.3rem;
+    /* タグ1つをまとまりとして、ばらばらの位置から集める */
+    opacity: 0;
+    translate: var(--x) var(--y);
+    rotate: var(--r);
+    transition:
+      opacity 0.35s ease var(--d),
+      translate 2s cubic-bezier(0.3, 0.55, 0.25, 1) var(--d),
+      rotate 2s cubic-bezier(0.3, 0.55, 0.25, 1) var(--d);
+  }
+
+  .tags[data-inview='true'] .tag {
+    opacity: 1;
+    translate: none;
+    rotate: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tag {
+      opacity: 1;
+      translate: none;
+      rotate: none;
+      transition: none;
+    }
   }
 
   .icon {
@@ -110,16 +122,5 @@
     width: 1.5rem;
     height: 1.5rem;
     fill: var(--icon-color);
-  }
-}
-
-/* 画面に入ったら、線が上から下へ伸びる */
-[data-inview='true'] .wrap::before {
-  height: 100%;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wrap::before {
-    transition: none;
   }
 }

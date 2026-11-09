@@ -5,6 +5,7 @@ import Profile from '@/components/about/profile/Profile';
 import SocialMedia from '@/components/about/socialMedia/SocialMedia';
 import Experience from '@/components/about/experience/Experience';
 import Information from '@/components/about/information/Information';
+import ScrollLine from '@/components/about/scrollLine/ScrollLine';
 
 export const metadata: Metadata = {
   title: 'Nekodesk Portfolio | About Me',
@@ -18,9 +19,11 @@ const page = () => {
       <div className={styles.wrap}>
         <main>
           <PagesTitle title="About Me" subTitle="私について" />
-          <Profile />
-          <Experience />
-          <Information />
+          <ScrollLine>
+            <Profile />
+            <Experience />
+            <Information />
+          </ScrollLine>
           <SocialMedia />
         </main>
       </div>

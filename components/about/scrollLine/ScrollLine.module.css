@@ -1,0 +1,12 @@
+.wrap {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  top: 18px;
+  left: 8px;
+  width: 1px;
+  height: 0;
+  background-color: #333;
+}
