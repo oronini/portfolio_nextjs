@@ -66,7 +66,7 @@ const notifySlack = async (name: string, email: string, text: string) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         text: [
-          '新しい問い合わせが届きました',
+          '[プロフ] 新しいお問い合わせが届きました',
           `名前: ${escapeSlack(name)}`,
           `メール: ${escapeSlack(email)}`,
           `内容:\n${escapeSlack(text)}`,
