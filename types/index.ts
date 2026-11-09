@@ -56,4 +56,6 @@ type MenuItem = {
   href: string;
   text: string;
   icon?: string;
+  // 外部サイトへのリンク(別タブで開き、アイコンを付ける)
+  external?: boolean;
 };

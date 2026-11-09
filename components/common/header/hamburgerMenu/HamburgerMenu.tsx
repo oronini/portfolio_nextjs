@@ -5,14 +5,15 @@ import Link from 'next/link';
 import './HamburgerMenu.css';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { BLOG_URL } from '@/lib/blog';
 
-const iconPath = 'img/icons/newTabOp.svg';
+const iconPath = '/img/icons/newTabOp.svg';
 
 const linkArray: MenuItem[] = [
   { href: '/', text: 'Top' },
   { href: '/about', text: 'About Me' },
   { href: '/production', text: 'Production' },
-  // { href: '/blog', text: 'Blog Site', icon: true },
+  { href: BLOG_URL, text: 'Blog Site', external: true },
   { href: '/contact', text: 'Contact' },
 ];
 
@@ -51,9 +52,12 @@ const HamburgerMenu = () => {
                   href={item.href}
                   className={styles.link}
                   onClick={() => setIsActive(false)}
+                  {...(item.external
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                 >
                   <p>{item.text}</p>
-                  {item.icon ? (
+                  {item.external ? (
                     <div className={styles.icon_wrap}>
                       <Image
                         src={iconPath}
