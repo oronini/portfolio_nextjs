@@ -2,12 +2,12 @@
   --ff-ja: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
     'メイリオ', Meiryo, sans-serif;
 
-  width: 29%;
+  width: 22%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  /* 3つが少しずつずれて表示される */
+  /* 4つが少しずつずれて表示される */
   &:nth-of-type(2) {
     --reveal-delay: 150ms;
     --wave-index: 1;
@@ -15,6 +15,10 @@
   &:nth-of-type(3) {
     --reveal-delay: 300ms;
     --wave-index: 2;
+  }
+  &:nth-of-type(4) {
+    --reveal-delay: 450ms;
+    --wave-index: 3;
   }
 
   @media (max-width: 768px) {
@@ -45,7 +49,7 @@
     max-width: 100%;
     img {
       animation: wave 4.8s ease-in-out infinite;
-      /* 3つの動きを少しずつずらして、波打つように見せる */
+      /* 4つの動きを少しずつずらして、波打つように見せる */
       animation-delay: calc(var(--wave-index, 0) * -1.6s);
     }
 
