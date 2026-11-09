@@ -29,6 +29,12 @@ export const iconsArray: iconsArrayType[] = [
     alt: 'threads',
     className: 'circle_black',
   },
+  {
+    href: 'https://note.com/nekodesk',
+    src: 'note.svg',
+    alt: 'note',
+    className: 'circle_black',
+  },
   // {
   //   href: '#',
   //   src: 'youtube.svg',
