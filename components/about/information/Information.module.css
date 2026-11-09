@@ -1,6 +1,7 @@
 .wrap {
-  --ff-ja: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
-    'メイリオ', Meiryo, sans-serif;
+  --ff-ja:
+    Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ',
+    Meiryo, sans-serif;
 
   padding-left: 4rem;
   padding-bottom: 4rem;
@@ -13,12 +14,12 @@
   &::before {
     content: '';
     width: 1px;
-    height: 1px;
+    height: 0;
     background-color: #333;
     position: absolute;
     top: 18px;
     left: 8px;
-    animation: lineSlide 3.5s ease-out 5.5s 1 normal forwards;
+    transition: height 2.4s ease-out 0.3s;
   }
 
   .content {
@@ -134,8 +135,18 @@
           border: 1px solid #ccc;
           border-radius: 999px;
           font-size: 1.3rem;
-          transition: background-color 0.3s, color 0.3s, border-color 0.3s,
-            transform 0.3s;
+          /* 集まる動き(opacity / translate / rotate)だけに待ち時間を付け、ホバーは待たせない */
+          opacity: 0;
+          translate: var(--x) var(--y);
+          rotate: var(--r);
+          transition:
+            background-color 0.3s,
+            color 0.3s,
+            border-color 0.3s,
+            transform 0.3s,
+            opacity 0.35s ease var(--d),
+            translate 2s cubic-bezier(0.3, 0.55, 0.25, 1) var(--d),
+            rotate 2s cubic-bezier(0.3, 0.55, 0.25, 1) var(--d);
 
           &::after {
             content: none;
@@ -167,12 +178,33 @@
           }
         }
       }
+
+      /* 画面に入ったら、タグが1つずつまとまって集まる */
+      &[data-inview='true'] .skill_item {
+        opacity: 1;
+        translate: none;
+        rotate: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .skill_item {
+          opacity: 1;
+          translate: none;
+          rotate: none;
+          transition: none;
+        }
+      }
     }
   }
 }
 
-@keyframes lineSlide {
-  100% {
-    height: 100%;
+/* 画面に入ったら、線が上から下へ伸びる */
+[data-inview='true'] .wrap::before {
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrap::before {
+    transition: none;
   }
 }
