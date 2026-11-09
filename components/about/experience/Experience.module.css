@@ -1,0 +1,120 @@
+.wrap {
+  --ff-ja:
+    Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ',
+    Meiryo, sans-serif;
+
+  padding-left: 4rem;
+  padding-bottom: 4rem;
+  position: relative;
+  font-family: var(--ff-ja);
+
+  @media (max-width: 768px) {
+    padding-left: 3.2rem;
+  }
+
+  &::before {
+    content: '';
+    width: 1px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    top: 18px;
+    left: 8px;
+    animation: lineSlide 3.5s ease-out 5s 1 normal forwards;
+  }
+
+  .list {
+    margin-top: 2.4rem;
+    margin-left: 3.2rem;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 19rem 1fr;
+    gap: 2.4rem;
+    padding-block: 2.4rem;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.5rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      padding: 1.6rem 1.6rem 1.6rem 0.8rem;
+    }
+  }
+
+  .period {
+    color: #757575;
+    text-align: right;
+
+    @media (max-width: 768px) {
+      text-align: left;
+      font-size: 1.3rem;
+    }
+  }
+
+  .title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .text,
+  .points {
+    margin-top: 0.8rem;
+    line-height: 1.8;
+  }
+
+  .points li {
+    padding-left: 1.4rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 1px;
+      background-color: #333;
+      position: absolute;
+      top: 1.2em;
+      left: 0;
+    }
+
+    &:nth-of-type(n + 2) {
+      margin-top: 0.4rem;
+    }
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1.4rem;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    font-size: 1.3rem;
+  }
+
+  .icon {
+    flex: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--icon-color);
+  }
+}
+
+@keyframes lineSlide {
+  100% {
+    height: 100%;
+  }
+}

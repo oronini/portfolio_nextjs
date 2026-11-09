@@ -1,0 +1,86 @@
+// 新しい順。会社名・取引先名は書かない。
+// 期間は固定の年月で示し、「現在」などの時間で古くなる書き方は避ける。
+export const experienceArray: ExperienceItemType[] = [
+  {
+    period: '2026年6月〜',
+    title: 'AI を活用したシステムの開発(営業向け AIOS・介護向け LINE Bot)',
+    points: [
+      '営業向け AIOS：Python を中心に、Claude Code と Claude API を使って開発。基盤は AWS。',
+      '介護向け LINE Bot(AI)：Python・TypeScript・React で、Claude Code と Claude API を使って開発。基盤は AWS。マーケティングにも参加し、ElevenLabs や HeyGen などを活用した動画の作成も行いました。',
+    ],
+    skills: [
+      'Python',
+      'TypeScript',
+      'React',
+      'AWS',
+      'Claude Code',
+      'Claude API',
+      'LINE API',
+      'ElevenLabs',
+      'HeyGen',
+    ],
+  },
+  {
+    period: '2026年4月〜',
+    title: 'Windows デスクトップアプリ(C#・C++)の事業移管',
+    text: '既存アプリの事業移管に伴い、ビルド環境の構築(Jenkins・Gitea)とビルド用バッチの修正、C# による補助ツールの開発を担当。最大5名程度のチームで、アプリ側のリーダー的な役割を担い、開発には Claude Code も活用しました。',
+    skills: [
+      'C#',
+      'C++',
+      'Jenkins',
+      'Gitea',
+      'Windows',
+      'Azure',
+      'Claude Code',
+    ],
+  },
+  {
+    period: '2025年4月〜2026年2月',
+    title: 'Web アプリケーションの開発・運用(複数案件を並行)',
+    points: [
+      'データ変換を行う業務システム：フロントエンド(Next.js)に加え、バックエンド(Hono)と AWS の構成までを設計・実装。',
+      '人材系のアプリ：Go・GraphQL・OpenSearch・Lambda による機能開発、GitHub Actions による CI/CD の自動化、LLM(大規模言語モデル)を組み込んだ機能の開発。',
+      '医療系のアプリ：モックの段階から、データ構造と API の要件を整理し、手戻りが出にくい設計を進めました。その後、Go によるバックエンドの実装も担当し、スマレジ API のデータも利用しました。',
+      'AI の活用：Cursor・Claude Code による開発の効率化と、ChatGPT API を使った機能の開発。',
+      '全体：顧客との折衝、設計・コードレビュー、メンバーのフォロー(担当は案件により異なります)。小規模な案件では、設計と技術選定を主導しました。',
+    ],
+    skills: [
+      'Next.js',
+      'TypeScript',
+      'React',
+      'Hono',
+      'Go',
+      'GraphQL',
+      'AWS',
+      'AWS Lambda',
+      'Amazon DynamoDB',
+      'OpenSearch',
+      'GitHub Actions',
+      'Cursor',
+      'Claude Code',
+      'OpenAI API',
+    ],
+  },
+  {
+    period: '2025年4月〜2025年10月',
+    title: 'Web サイトの運用ディレクション',
+    text: '製造業のコーポレートサイトなどの運用ディレクションを担当しました。日々の更新依頼の優先度付けと、デザイナー・コーダーへのタスクの振り分け、公開までの進行管理を担当しました。定例会の運営、承認フローとガイドラインの改善、工数の算出、見積書・請求書の作成まで、一貫して担いました。',
+  },
+  {
+    period: '2022年11月〜2025年3月',
+    title: 'FAQ サイトの制作・進行管理',
+    text: '金融・自動車・小売などの業種の FAQ サイトを、顧客との折衝、要件定義、設計、デザイン、実装まで一貫して担当しました。ローコード環境でのデザインやコードのテンプレート化・標準化により、チーム全体の工数を削減。コードレビューや品質管理も担い、プロジェクトのリーダー・サブリーダーを務めることもありました。',
+    skills: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'PHP'],
+  },
+  {
+    period: '2022年1月〜2022年10月',
+    title: 'Web 開発の研修と実務のスタート',
+    text: '社内研修(HTML・CSS・JavaScript・PHP・Laravel)のあと、官公庁系 Web サイトの表示・動作テストと不具合修正、LINE 連携のチャットツールの導入・運用サポートを経験しました。',
+    skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel'],
+  },
+  {
+    period: '2017年7月〜2021年12月',
+    title: '通信業のカスタマーサポート(SV)',
+    text: 'コールセンターの SV として、オペレーターのマネジメントと育成、KPI 管理、クレーム対応、業務改善を担当しました。新サービスのチャットサポートの立ち上げにも携わりました。',
+  },
+];
