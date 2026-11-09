@@ -16,6 +16,8 @@ const SocialMedia = () => {
           {iconsArray.map((item) => (
             <Link
               href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`${styles.icon_circle} ${item.className}`}
               key={item.src}
             >
