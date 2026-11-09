@@ -37,7 +37,7 @@ const About = () => {
           </p>
         </div>
         <div className={styles.img_link}>
-          <div className={styles.img_wrap}>
+          <div className={`${styles.img_wrap} ${styles.roll}`}>
             <Image
               src={imagePath}
               alt="プロフィール画像"
