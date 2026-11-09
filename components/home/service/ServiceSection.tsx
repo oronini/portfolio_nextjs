@@ -34,7 +34,7 @@ const serviceItemArray = [
     subTitle: 'AI 活用',
     imgPath: 'ai.svg',
     imgAlt: 'AI 活用画像',
-    text: 'Claude Code や Cursor などの AI ツールを、設計から実装、運用までの開発に取り入れています。Claude API・ChatGPT API を使ったアプリや LINE Bot の開発、ブログ運営の自動化にも取り組み、AI に任せる範囲と人が判断する範囲を見極めて、品質を保つ活用方法を考えます。',
+    text: 'AI が開発しやすいように設計を整え、ルール・スキル・ハーネスを用意して、実装やレビュー、定型作業を自動化します。Claude Code・Cursor の活用に加え、Claude API・ChatGPT API を使ったアプリや LINE Bot の開発、ブログ運営の自動化にも取り組んでいます。AI に任せる範囲と人が判断する範囲を見極め、品質を保つことを大切にしています。',
   },
 ];
 

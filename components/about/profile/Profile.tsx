@@ -34,7 +34,7 @@ const Profile = () => {
                     'hard',
                   ],
                   [
-                    'AI の活用にも力を入れています。Claude Code や Cursor を開発に取り入れ、Claude API・ChatGPT API を使ったアプリや LINE Bot の開発、ブログ運営の自動化にも取り組んでいます。このサイトのプロフィールの作成にも AI を活用しています。',
+                    'AI の活用にも力を入れています。AI が開発しやすいように設計を整え、ルール・スキル・ハーネスを用意して、実装やレビュー、定型作業を自動化しています。Claude Code や Cursor に加え、Claude API・ChatGPT API を使ったアプリや LINE Bot の開発、ブログ運営の自動化にも取り組んでいます。このサイトの制作にも AI を活用しています。',
                     'hard',
                   ],
                   [
