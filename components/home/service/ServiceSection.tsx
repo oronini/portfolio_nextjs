@@ -9,7 +9,7 @@ const aiItem = {
   subTitle: 'AI 活用',
   imgPath: 'ai.svg',
   imgAlt: 'AI 活用画像',
-  text: 'コードレビューや調査、定型作業を AI で効率化し、開発のスピードと品質を両立させます。Claude Code・Cursor を使った開発に加え、Claude API・ChatGPT API を使ったアプリや LINE Bot の開発、ブログ運営の自動化にも取り組んでいます。AI に任せる範囲と人が判断する範囲を見極めることを大切にしています。',
+  text: 'コードレビューや調査、定型作業を AI で効率化し、開発のスピードと品質を両立させます。\nClaude Code・Cursor を使った開発に加え、Claude API・ChatGPT API を使ったアプリや LINE Bot の開発、ブログ運営の自動化にも取り組んでいます。\nAI に任せる範囲と人が判断する範囲を見極めることを大切にしています。',
 };
 const serviceItemArray = [
   {

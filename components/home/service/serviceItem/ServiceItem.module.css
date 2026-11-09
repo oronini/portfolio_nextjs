@@ -73,7 +73,7 @@
 .content.featured {
   width: 100%;
   display: grid;
-  grid-template-columns: auto minmax(0, 56rem);
+  grid-template-columns: auto minmax(0, 64rem);
   grid-template-areas:
     'img title'
     'img text';
