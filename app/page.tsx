@@ -15,10 +15,6 @@ export default function Home() {
     <>
       <div className={styles.main_visual_wrap}>
         <HeroVisual>
-          <div className={`${styles.line} animation_line1`}></div>
-          <div className={`${styles.line} animation_line2`}></div>
-          <div className={`${styles.line} animation_line3`}></div>
-          <div className={`${styles.line} animation_line4`}></div>
           <h2 className={styles.title}>
             <ScatterText text="Keep Thinking" delayMs={3300} auto />
             <span className={styles.sub_title}>

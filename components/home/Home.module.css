@@ -31,14 +31,6 @@
       pointer-events: none;
     }
 
-    .line {
-      background-color: #f9feff;
-      /* background-color: #757575; */
-      width: 102%;
-      height: 25%;
-      position: absolute;
-    }
-
     .title {
       position: absolute;
       bottom: 50%;
