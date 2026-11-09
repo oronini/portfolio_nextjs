@@ -2,6 +2,7 @@ import AboutHeading from '@/components/common/parts/aboutHeading/AboutHeading';
 import styles from './Information.module.css';
 import ScatterText from '@/components/common/parts/scatterText/ScatterText';
 import { hobbyArray, skillArray } from '@/lib/information';
+import SkillIcon from './SkillIcon';
 
 const Information = () => {
   return (
@@ -29,6 +30,7 @@ const Information = () => {
                 <ul className={styles.skill_list}>
                   {item.skills.map((text) => (
                     <li className={styles.skill_item} key={text}>
+                      <SkillIcon skill={text} />
                       {text}
                     </li>
                   ))}
