@@ -11,17 +11,23 @@ export const iconsArray: iconsArrayType[] = [
   //   alt: 'line',
   //   className: 'circle_green',
   // },
-  // {
-  //   href: '#',
-  //   src: 'instagram.svg',
-  //   alt: 'instagram',
-  //   className: 'circle_rainbow',
-  // },
   {
-    href: 'https://x.com/mimiwk01',
+    href: 'https://x.com/nekodesk44',
     src: 'x.svg',
     alt: 'x',
     className: 'circle_black__s',
+  },
+  {
+    href: 'https://www.instagram.com/nekodesk44/',
+    src: 'instagram.svg',
+    alt: 'instagram',
+    className: 'circle_rainbow',
+  },
+  {
+    href: 'https://www.threads.com/@nekodesk44',
+    src: 'threads.svg',
+    alt: 'threads',
+    className: 'circle_black',
   },
   // {
   //   href: '#',
