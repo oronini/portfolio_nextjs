@@ -5,6 +5,7 @@ type ServiceSectionProps = {
   imgPath: string;
   imgAlt: string;
   text: string;
+  featured?: boolean;
 };
 
 type BlogSiteSectionProps = {

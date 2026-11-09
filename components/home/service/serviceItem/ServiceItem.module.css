@@ -1,13 +1,14 @@
 .content {
-  --ff-ja: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
-    'メイリオ', Meiryo, sans-serif;
+  --ff-ja:
+    Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ',
+    Meiryo, sans-serif;
 
-  width: 22%;
+  width: 29%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  /* 4つが少しずつずれて表示される */
+  /* 3つが少しずつずれて表示される */
   &:nth-of-type(2) {
     --reveal-delay: 150ms;
     --wave-index: 1;
@@ -15,10 +16,6 @@
   &:nth-of-type(3) {
     --reveal-delay: 300ms;
     --wave-index: 2;
-  }
-  &:nth-of-type(4) {
-    --reveal-delay: 450ms;
-    --wave-index: 3;
   }
 
   @media (max-width: 768px) {
@@ -49,7 +46,7 @@
     max-width: 100%;
     img {
       animation: wave 4.8s ease-in-out infinite;
-      /* 4つの動きを少しずつずらして、波打つように見せる */
+      /* 3つの動きを少しずつずらして、波打つように見せる */
       animation-delay: calc(var(--wave-index, 0) * -1.6s);
     }
 
@@ -67,6 +64,52 @@
     line-height: 2;
 
     @media (max-width: 768px) {
+      margin-top: 3.2rem;
+    }
+  }
+}
+
+/* 強みとして見せる項目。PC は横長に、スマホは他の項目と同じ縦並び */
+.content.featured {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 56rem);
+  grid-template-areas:
+    'img title'
+    'img text';
+  justify-content: center;
+  align-items: center;
+  column-gap: 8rem;
+
+  .title {
+    grid-area: title;
+    text-align: left;
+  }
+
+  .img_wrap {
+    grid-area: img;
+    margin-top: 0;
+  }
+
+  .text {
+    grid-area: text;
+    margin-top: 2.4rem;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      text-align: center;
+    }
+
+    .img_wrap {
+      margin-top: 2.4rem;
+    }
+
+    .text {
       margin-top: 3.2rem;
     }
   }

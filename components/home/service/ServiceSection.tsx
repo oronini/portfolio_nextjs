@@ -3,6 +3,14 @@ import styles from './ServiceSection.module.css';
 import ServiceItem from './serviceItem/ServiceItem';
 
 const imagePath = 'img/home/serviceIcon/';
+const aiItem = {
+  id: 4,
+  title: 'AI',
+  subTitle: 'AI 活用',
+  imgPath: 'ai.svg',
+  imgAlt: 'AI 活用画像',
+  text: 'AI が開発しやすいように設計を整え、ルール・スキル・ハーネスを用意して、実装やレビュー、定型作業を自動化します。Claude Code・Cursor の活用に加え、Claude API・ChatGPT API を使ったアプリや LINE Bot の開発、ブログ運営の自動化にも取り組んでいます。AI に任せる範囲と人が判断する範囲を見極め、品質を保つことを大切にしています。',
+};
 const serviceItemArray = [
   {
     id: 1,
@@ -28,20 +36,23 @@ const serviceItemArray = [
     imgAlt: 'デザイン画像',
     text: '余白を活かした、シンプルで読みやすい UI のデザインを得意としています。情報の優先度を整理し、ユーザーが迷わず目的を達成できる画面を心がけています。モックの段階から、実装やデータの構造を見据えた画面設計を行います。',
   },
-  {
-    id: 4,
-    title: 'AI',
-    subTitle: 'AI 活用',
-    imgPath: 'ai.svg',
-    imgAlt: 'AI 活用画像',
-    text: 'AI が開発しやすいように設計を整え、ルール・スキル・ハーネスを用意して、実装やレビュー、定型作業を自動化します。Claude Code・Cursor の活用に加え、Claude API・ChatGPT API を使ったアプリや LINE Bot の開発、ブログ運営の自動化にも取り組んでいます。AI に任せる範囲と人が判断する範囲を見極め、品質を保つことを大切にしています。',
-  },
 ];
 
 const ServiceSection = () => {
   return (
     <section className={styles.section}>
       <ServiceContactSectionTitle title="Service" />
+      {/* 強みとして、3つの項目より先に横長で見せる */}
+      <div className={styles.ai_wrap}>
+        <ServiceItem
+          title={aiItem.title}
+          subTitle={aiItem.subTitle}
+          imgPath={`${imagePath}${aiItem.imgPath}`}
+          imgAlt={aiItem.imgAlt}
+          text={aiItem.text}
+          featured
+        />
+      </div>
       <div className={styles.content_warp}>
         {serviceItemArray.map((item) => (
           <ServiceItem
