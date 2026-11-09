@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <div className={styles.line}></div>
       <div className={styles.wrap}>
         <main>
           <PagesTitle title="Production" subTitle="制作物" />

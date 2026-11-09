@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <div className={styles.line}></div>
       <div className={styles.wrap}>
         <main>
           <PagesTitle title="Contact" subTitle="お問合せ" />
