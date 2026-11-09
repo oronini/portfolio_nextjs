@@ -7,7 +7,7 @@ import ContactForm from '@/components/contact/ContactForm';
 export const metadata: Metadata = {
   title: 'Nekodesk Portfolio | Contact',
   description:
-    'Nekodesk へのお問い合わせフォームです。制作のご依頼、ご相談、その他のご連絡を受け付けています。お名前・メールアドレス・お問い合わせ内容をご入力のうえ、お送りください。',
+    'Nekodesk へのお問い合わせフォームです。ご依頼、ご相談、その他のご連絡を受け付けています。お名前・メールアドレス・お問い合わせ内容をご入力のうえ、お送りください。',
 };
 
 const page = () => {
@@ -18,7 +18,7 @@ const page = () => {
           <PagesTitle title="Contact" subTitle="お問い合わせ" />
           <div className={styles.text_wrap}>
             <p>
-              <ScatterText text="制作のご依頼、ご相談、その他のご連絡など、お気軽にお問い合わせください。" />
+              <ScatterText text="ご依頼、ご相談、その他のご連絡など、お気軽にお問い合わせください。" />
             </p>
             <p>
               <ScatterText text="お問い合わせをお待ちしております。" />

@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import styles from './ScrollLine.module.css';
 
 // 画面の上から、この割合の位置まで線を伸ばす
-const REACH = 0.75;
+const REACH = 0.5;
 const LINE_TOP = 18;
 
 /**
