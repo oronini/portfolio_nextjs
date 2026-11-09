@@ -23,8 +23,8 @@ const page = () => {
             <Profile />
             <Experience />
             <Information />
+            <SocialMedia />
           </ScrollLine>
-          <SocialMedia />
         </main>
       </div>
     </>

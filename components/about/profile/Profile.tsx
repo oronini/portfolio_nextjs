@@ -9,7 +9,7 @@ const Profile = () => {
       <div className={styles.wrap}>
         <AboutHeading text="Hey! I&#39;m Web Developer" />
         <div className={styles.content}>
-          <div className={styles.img_wrap}>
+          <div className={`${styles.img_wrap} ${styles.roll}`}>
             <Image
               src={'/img/about/mascot.png'}
               alt="プロフィール画像"

@@ -6,11 +6,22 @@ import styles from './ScrollLine.module.css';
 // 画面の上から、この割合の位置まで線を伸ばす
 const REACH = 0.5;
 const LINE_TOP = 18;
+// 最後の見出し(data-line-end)の手前で、いったん線を止める余白(px)
+const GAP_BEFORE_END = 40;
+// 最後の見出しが、画面の上からこの割合より上に入ったら、黒丸までゆっくりつなぐ
+const CONNECT_AT = 0.85;
 
-/**
- * 子要素の左側に、スクロールに合わせて上から下へ伸びる縦線を1本引く。
- * セクションごとに線を持つと、伸びるタイミングがばらばらになるため、全体で1本にする。
- */
+// 表示演出の移動(transform)に影響されない、親からの位置
+const offsetTopWithin = (el: HTMLElement, ancestor: HTMLElement) => {
+  let top = 0;
+  let node: HTMLElement | null = el;
+  while (node && node !== ancestor) {
+    top += node.offsetTop;
+    node = node.offsetParent as HTMLElement | null;
+  }
+  return top;
+};
+
 const ScrollLine = ({ children }: { children: React.ReactNode }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLSpanElement>(null);
@@ -28,9 +39,27 @@ const ScrollLine = ({ children }: { children: React.ReactNode }) => {
     const update = () => {
       frame = 0;
       const rect = wrap.getBoundingClientRect();
-      const max = Math.max(rect.height - LINE_TOP, 0);
+      const end = wrap.querySelector<HTMLElement>('[data-line-end]');
+      const endTop = end ? offsetTopWithin(end, wrap) : null;
+      // 最後の黒丸の中心までの長さ。見出しが無ければ全体の長さ
+      const full = Math.max(
+        (end && endTop !== null ? endTop + end.offsetHeight / 2 : rect.height) -
+          LINE_TOP,
+        0
+      );
+      const stop =
+        endTop !== null
+          ? Math.max(endTop - GAP_BEFORE_END - LINE_TOP, 0)
+          : full;
+      const connecting = end
+        ? end.getBoundingClientRect().top < window.innerHeight * CONNECT_AT
+        : false;
       const reached = window.innerHeight * REACH - rect.top - LINE_TOP;
-      const height = reduceMotion ? max : Math.min(Math.max(reached, 0), max);
+      const height =
+        reduceMotion || connecting
+          ? full
+          : Math.min(Math.max(reached, 0), stop);
+      line.dataset.connecting = String(connecting);
       line.style.height = `${height}px`;
     };
     const request = () => {
