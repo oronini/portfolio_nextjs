@@ -3,8 +3,11 @@ import styles from './Information.module.css';
 import ScatterText from '@/components/common/parts/scatterText/ScatterText';
 import { hobbyArray, skillArray } from '@/lib/information';
 import SkillIcon from './SkillIcon';
+import { scatterStyle } from '@/lib/scatter';
 
 const Information = () => {
+  let tagIndex = 0;
+
   return (
     <section data-reveal>
       <div className={styles.wrap}>
@@ -23,13 +26,17 @@ const Information = () => {
             <ScatterText text="大阪府枚方市" />
           </dd>
           <dt className={styles.dt}>開発スキル / 環境</dt>
-          <dd className={styles.dd}>
+          <dd className={styles.dd} data-scatter>
             {skillArray.map((item) => (
               <div className={styles.skill_wrap} key={item.title}>
                 <p className={styles.skill_title}>{item.title}</p>
                 <ul className={styles.skill_list}>
                   {item.skills.map((text) => (
-                    <li className={styles.skill_item} key={text}>
+                    <li
+                      className={styles.skill_item}
+                      key={text}
+                      style={scatterStyle(tagIndex++)}
+                    >
                       <SkillIcon skill={text} />
                       {text}
                     </li>

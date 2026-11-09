@@ -9,7 +9,8 @@ const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Nekodesk Portfolio',
-  description: 'Nekodesk Portfolio',
+  description:
+    'Nekodesk のポートフォリオサイトです。Next.js・TypeScript・AWS による Web アプリ開発から、Windows デスクトップアプリ関連の開発、ディレクション、設計までの経験とスキルを紹介します。',
 };
 
 export default function RootLayout({

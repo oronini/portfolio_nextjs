@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import styles from '../Home.module.css';
 import { createDotsImage } from './dotsImage';
 
-// MvAnimation.css の線が走る演出(0.5s〜3.3s)に合わせて、粒子が集まる
+// 粒子が集まる時間(0.5s〜3.7s)。タイトルの文字は 3.3s から集まり始める
 const INTRO_DELAY_MS = 500;
 const INTRO_DURATION_MS = 3200;
 

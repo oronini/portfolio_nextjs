@@ -25,7 +25,7 @@ export const skillArray: skillArrayType[] = [
       'Hono',
       '.NET',
       '.NET Framework',
-      'Laravel(学習中)',
+      'Laravel',
       'jQuery',
       'Three.js',
       'SheetJS',
@@ -80,6 +80,7 @@ export const skillArray: skillArrayType[] = [
     title: 'AI',
     skills: [
       'Claude Code',
+      'Cursor',
       'Codex',
       'Claude API',
       'OpenAI API',
@@ -89,7 +90,7 @@ export const skillArray: skillArrayType[] = [
   },
   {
     title: 'ツール',
-    skills: ['Git', 'GitHub', 'GitHub Actions', 'Gitea', 'Figma'],
+    skills: ['Git', 'GitHub', 'GitHub Actions', 'Gitea', 'Jenkins', 'Figma'],
   },
 ];
 

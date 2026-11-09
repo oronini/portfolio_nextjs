@@ -4,10 +4,19 @@
   @media (max-width: 768px) {
   }
 
+  .ai_wrap {
+    margin-top: 4.8rem;
+
+    @media (max-width: 768px) {
+      margin-top: 6.4rem;
+      padding-inline: 1.6rem;
+    }
+  }
+
   .content_warp {
     display: flex;
     justify-content: space-between;
-    margin-top: 4.8rem;
+    margin-top: 8rem;
 
     @media (max-width: 768px) {
       flex-direction: column;

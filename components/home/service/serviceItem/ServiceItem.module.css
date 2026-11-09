@@ -1,6 +1,7 @@
 .content {
-  --ff-ja: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3,
-    'メイリオ', Meiryo, sans-serif;
+  --ff-ja:
+    Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ',
+    Meiryo, sans-serif;
 
   width: 29%;
   display: flex;
@@ -63,6 +64,52 @@
     line-height: 2;
 
     @media (max-width: 768px) {
+      margin-top: 3.2rem;
+    }
+  }
+}
+
+/* 強みとして見せる項目。PC は横長に、スマホは他の項目と同じ縦並び */
+.content.featured {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 64rem);
+  grid-template-areas:
+    'img title'
+    'img text';
+  justify-content: center;
+  align-items: center;
+  column-gap: 8rem;
+
+  .title {
+    grid-area: title;
+    text-align: left;
+  }
+
+  .img_wrap {
+    grid-area: img;
+    margin-top: 0;
+  }
+
+  .text {
+    grid-area: text;
+    margin-top: 2.4rem;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      text-align: center;
+    }
+
+    .img_wrap {
+      margin-top: 2.4rem;
+    }
+
+    .text {
       margin-top: 3.2rem;
     }
   }

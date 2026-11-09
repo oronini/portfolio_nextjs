@@ -8,9 +8,13 @@ const ServiceItem = ({
   imgPath,
   imgAlt,
   text,
+  featured = false,
 }: ServiceSectionProps) => {
   return (
-    <section className={styles.content} data-reveal>
+    <section
+      className={`${styles.content} ${featured ? styles.featured : ''}`}
+      data-reveal
+    >
       <h4 className={styles.title}>
         <ScatterText text={title} />
         <span className={styles.sub_title}>

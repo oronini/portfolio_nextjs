@@ -9,16 +9,20 @@ const Contact = () => {
       <ServiceContactSectionTitle title="Contact" />
       <div className={styles.wrap}>
         <Link href={'/contact'} className={styles.link_btn}>
-          <ScatterText lines={[['お問合せはこちらから']]} />
+          <ScatterText lines={[['お問い合わせはこちらから']]} />
         </Link>
         <div className={styles.text_wrap}>
           <p className={styles.text}>
             <ScatterText
-              lines={[['制作の依頼・ご相談など何でもお気軽にお問い合わせくださいませ。']]}
+              lines={[
+                [
+                  'ご依頼、ご相談、その他のご連絡など、お気軽にお問い合わせください。',
+                ],
+              ]}
             />
           </p>
           <p className={styles.text}>
-            <ScatterText lines={[['お問合わせをお待ちしております。']]} />
+            <ScatterText lines={[['お問い合わせをお待ちしております。']]} />
           </p>
         </div>
       </div>

@@ -1,0 +1,26 @@
+.wrap {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  top: 18px;
+  left: 8px;
+  width: 1px;
+  height: 0;
+  background-color: #333;
+  /* スクロールには素早く追従する */
+  transition: height 0.15s linear;
+}
+
+/* 最後の黒丸には、ゆっくりつなぐ */
+.line[data-connecting='true'] {
+  transition: height 1.4s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line,
+  .line[data-connecting='true'] {
+    transition: none;
+  }
+}

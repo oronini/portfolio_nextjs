@@ -11,7 +11,10 @@ const SocialMedia = () => {
   return (
     <section data-reveal>
       <div className={styles.wrap}>
-        <AboutHeading text="Social Media" />
+        {/* 縦線がこの見出しの黒丸までつながる(ScrollLine が位置を読む) */}
+        <div data-line-end>
+          <AboutHeading text="Social Media" />
+        </div>
         <div className={styles.icons_wrap}>
           {iconsArray.map((item) => (
             <Link

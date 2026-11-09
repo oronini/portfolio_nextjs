@@ -11,14 +11,14 @@ const kanaWord = /^[\u3041-\u3096\u30A1-\u30FA\uFF65-\uFF9F\s]*$/;
 const telephoneRegex = /^(0\d{1,4}-\d{1,4}-\d{4}|0\d{9,10})$/;
 
 const errorScheme = yup.object().shape({
-  name: yup.string().required('お名前が入力さていません。'),
+  name: yup.string().required('お名前が入力されていません。'),
   kana: yup
     .string()
-    .required('フリガナが入力さていません。')
-    .matches(kanaWord, 'ひらかなもしくはカタカナのみで入力してください。'),
+    .required('フリガナが入力されていません。')
+    .matches(kanaWord, 'ひらがなまたはカタカナのみで入力してください。'),
   email: yup
     .string()
-    .required('メールアドレスが入力さていません。')
+    .required('メールアドレスが入力されていません。')
     .email('メールアドレスの形式が正しくありません。'),
   tel: yup
     .string()
@@ -28,7 +28,7 @@ const errorScheme = yup.object().shape({
       (value) =>
         value === undefined || value === '' || telephoneRegex.test(value)
     ),
-  text: yup.string().required('お問い合わせ内容が入力さていません。'),
+  text: yup.string().required('お問い合わせ内容が入力されていません。'),
   // スパム対策の罠欄。人には見えないので空のままで、ボットが埋めた場合はサーバー側で破棄する
   website: yup.string(),
 });
@@ -73,7 +73,7 @@ const ContactForm = () => {
       });
 
       if (res.ok) {
-        alert('送信されました。');
+        alert('お問い合わせを送信しました。');
         // 失敗時は入力内容を残し、やり直せるようにする
         reset();
       } else if (res.status === 400) {

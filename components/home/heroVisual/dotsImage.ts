@@ -17,10 +17,13 @@ const vertexShader = /* glsl */ `
   uniform float uRadius;
   uniform float uDpr;
   varying vec3 vColor;
+  varying float vAlpha;
 
   void main() {
     vColor = aColor;
     float t = clamp((uProgress - aRand * 0.6) / 0.4, 0.0, 1.0);
+    // 文字と同じく、動き出すとすぐ見えるようになる(動き始める前は見えない)
+    vAlpha = smoothstep(0.0, 0.12, t);
     float eased = 1.0 - pow(1.0 - t, 3.0);
     vec3 p = mix(aStart, position, eased);
 
@@ -39,10 +42,11 @@ const vertexShader = /* glsl */ `
 
 const fragmentShader = /* glsl */ `
   varying vec3 vColor;
+  varying float vAlpha;
 
   void main() {
     float r = length(gl_PointCoord - vec2(0.5));
-    float alpha = 1.0 - smoothstep(0.38, 0.5, r);
+    float alpha = (1.0 - smoothstep(0.38, 0.5, r)) * vAlpha;
     if (alpha < 0.01) discard;
     gl_FragColor = vec4(vColor, alpha);
   }
@@ -181,7 +185,19 @@ export async function createDotsImage(
       const x = (i % cols) * cell + cell / 2;
       const y = Math.floor(i / cols) * cell + cell / 2;
       positions.set([x, height - y, 0], i * 3);
-      starts.set([Math.random() * width, Math.random() * height, 0], i * 3);
+      // 文字と同じく、本来の位置の周りの離れた所(140〜440px)から集まる。画面の外へ出る向きは反転する
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 140 + Math.random() * 300;
+      const dx = Math.cos(angle) * distance;
+      const dy = Math.sin(angle) * distance;
+      let sx = x + dx;
+      let sy = height - y + dy;
+      if (sx < 0 || sx > width) sx = x - dx;
+      if (sy < 0 || sy > height) sy = height - y - dy;
+      starts.set(
+        [Math.min(Math.max(sx, 0), width), Math.min(Math.max(sy, 0), height), 0],
+        i * 3,
+      );
 
       // 明るい毛並みは小さく、影や鼻のような暗い所ほど大きなドットにする
       const darkness = Math.min(Math.max((1 - lums[i]) / 0.5, 0), 1);

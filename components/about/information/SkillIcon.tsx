@@ -5,9 +5,10 @@ import styles from './Information.module.css';
 
 type Props = {
   skill: string;
+  className?: string;
 };
 
-const SkillIcon = ({ skill }: Props) => {
+const SkillIcon = ({ skill, className }: Props) => {
   const icon = findSkillIcon(skill);
   if (!icon) return null;
 
@@ -15,7 +16,7 @@ const SkillIcon = ({ skill }: Props) => {
   if ('src' in icon) {
     return (
       <Image
-        className={styles.skill_icon_image}
+        className={className ?? styles.skill_icon_image}
         src={icon.src}
         alt=""
         width={15}
@@ -28,7 +29,7 @@ const SkillIcon = ({ skill }: Props) => {
   // 通常時はブランドカラー。ホバーでタグが暗い背景に反転するため、その間は文字色(白)にして黒系のアイコンが沈まないようにする
   return (
     <svg
-      className={styles.skill_icon}
+      className={className ?? styles.skill_icon}
       viewBox="0 0 24 24"
       style={{ '--icon-color': `#${icon.hex}` } as CSSProperties}
       aria-hidden="true"
