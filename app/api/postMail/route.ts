@@ -51,6 +51,37 @@ const escapeHtml = (value: string) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
+// Slack の特殊記法(<!channel> などのメンション・リンク)として解釈されないようにする
+const escapeSlack = (value: string) =>
+  value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// 通知に載せるのは名前・メールアドレス・本文のみ(電話番号・フリガナは載せない)
+const notifySlack = async (name: string, email: string, text: string) => {
+  const webhookUrl = process.env.SLACK_WEBHOOK_URL;
+  if (!webhookUrl) return;
+
+  try {
+    const res = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text: [
+          '新しい問い合わせが届きました',
+          `名前: ${escapeSlack(name)}`,
+          `メール: ${escapeSlack(email)}`,
+          `内容:\n${escapeSlack(text)}`,
+        ].join('\n'),
+      }),
+      // 通知の遅延で問い合わせの応答が長引かないようにする
+      signal: AbortSignal.timeout(3000),
+    });
+    if (!res.ok) console.error('Failed to notify Slack');
+  } catch {
+    // 通知の失敗でメール送信を失敗扱いにしない。個人情報を残さないため詳細は出さない
+    console.error('Failed to notify Slack');
+  }
+};
+
 export async function POST(req: NextRequest) {
   let body: unknown;
   try {
@@ -113,6 +144,7 @@ export async function POST(req: NextRequest) {
 
   try {
     await transporter.sendMail(toHostMailData);
+    await notifySlack(name, email, text);
     return NextResponse.json(
       { message: 'Mail sent successfully' },
       { status: 200 }
