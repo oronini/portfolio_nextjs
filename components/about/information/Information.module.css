@@ -127,6 +127,9 @@
         gap: 0.8rem;
 
         .skill_item {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
           padding: 0.4rem 1.4rem;
           border: 1px solid #ccc;
           border-radius: 999px;
@@ -138,7 +141,25 @@
             content: none;
           }
 
+          .skill_icon_image {
+            flex: none;
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+
+          .skill_icon {
+            flex: none;
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: var(--icon-color);
+            transition: fill 0.3s;
+          }
+
           &:hover {
+            .skill_icon {
+              fill: currentColor;
+            }
+
             background-color: #333;
             border-color: #333;
             color: #fff;

@@ -11,10 +11,10 @@ const Profile = () => {
         <div className={styles.content}>
           <div className={styles.img_wrap}>
             <Image
-              src={'/img/about/profile.png'}
+              src={'/img/about/mascot.png'}
               alt="プロフィール画像"
               width={500}
-              height={500}
+              height={625}
             />
           </div>
           <p className={styles.text}>
