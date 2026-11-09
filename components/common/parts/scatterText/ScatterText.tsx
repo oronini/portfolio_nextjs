@@ -1,7 +1,8 @@
 import styles from './ScatterText.module.css';
 
 // 改行の指定: hard = 常に改行 / soft = softBreakClassName が効かない幅のときだけ改行(PC幅の整形用)
-type Line = readonly [text: string, breakAfter?: 'hard' | 'soft'];
+// para = 段落の区切り(改行して、空行を1つ入れる)
+type Line = readonly [text: string, breakAfter?: 'hard' | 'soft' | 'para'];
 
 type Props = {
   // 行ごとに改行を指定する場合
@@ -107,6 +108,12 @@ const ScatterText = ({
             })}
             {breakAfter === 'hard' && <br />}
             {breakAfter === 'soft' && <br className={softBreakClassName} />}
+            {breakAfter === 'para' && (
+              <>
+                <br />
+                <br />
+              </>
+            )}
           </span>
         ))}
       </span>
