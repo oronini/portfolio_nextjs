@@ -9,7 +9,7 @@ type Props = {
   more?: boolean;
 };
 
-const iconPath = 'img/icons/newTabOp.svg';
+const iconPath = '/img/icons/newTabOp.svg';
 
 const HomeLink = ({ linkText, href, blogSite }: Props) => {
   return (

@@ -1,63 +1,32 @@
 import SectionTitle from '@/components/common/parts/Titles/SectionTitle';
 import styles from './BlogSite.module.css';
-import BlogSiteItem from './blogSiteItem/BlogSiteItem';
 import HomeLink from '@/components/common/parts/homeLink/HomeLink';
 import ProductionBlogSiteLink from '@/components/common/parts/homeLink/productionBlogSiteLinkWrap/ProductionBlogSiteLink';
+import ScatterText from '@/components/common/parts/scatterText/ScatterText';
+import { BLOG_URL } from '@/lib/blog';
 
-const imagePath = '/img/home/blogSite/';
-const BlogSiteItemArray: BlogSiteSectionProps[] = [
-  {
-    id: 0,
-    imgPath: 'blogImg1.jpg',
-    alt: 'サイト画像',
-    date: 'yyyy/mm/dd',
-    linkHref: '#',
-    text: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
-  },
-  {
-    id: 1,
-    imgPath: 'blogImg2.jpg',
-    alt: 'サイト画像',
-    date: 'yyyy/mm/dd',
-    linkHref: '#',
-    text: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
-  },
-  {
-    id: 2,
-    imgPath: 'blogImg3.jpg',
-    alt: 'サイト画像',
-    date: 'yyyy/mm/dd',
-    linkHref: '#',
-    text: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
-  },
-  {
-    id: 3,
-    imgPath: 'blogImg4.jpg',
-    alt: 'サイト画像',
-    date: 'yyyy/mm/dd',
-    linkHref: '#',
-    text: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
-  },
-];
-
+// 今はブログへの誘導だけ。最新記事を API から取得できるようになったら、
+// ここに記事の一覧(BlogSiteItem)を表示する。
 const BlogSite = () => {
   return (
     <section className={styles.section}>
-      <SectionTitle title="Blog Site" subTitle="ブログサイト" />
+      <SectionTitle title="Blog" subTitle="ブログ" />
       <div className={styles.content}>
-        {BlogSiteItemArray.map((item) => (
-          <BlogSiteItem
-            key={item.id}
-            imgPath={`${imagePath}${item.imgPath}`}
-            alt={item.alt}
-            date={item.date}
-            linkHref={item.linkHref}
-            text={item.text}
+        <p className={styles.text}>
+          <ScatterText
+            lines={[
+              [
+                '日常と猫、仕事、技術、ガジェット、PC、AI の記録を書いています。',
+                'hard',
+              ],
+              ['Astro と Cloudflare で作ったブログで、', 'hard'],
+              ['AI に運用を任せる仕組みなど、開発や自動化の話も載せています。'],
+            ]}
           />
-        ))}
+        </p>
       </div>
       <ProductionBlogSiteLink>
-        <HomeLink href="/contact" linkText="Blog Site" blogSite />
+        <HomeLink href={BLOG_URL} linkText="Blog Site" blogSite />
       </ProductionBlogSiteLink>
     </section>
   );
