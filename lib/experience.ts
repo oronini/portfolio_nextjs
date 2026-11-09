@@ -1,6 +1,7 @@
 // 新しい順。会社名・取引先名は書かない。
 // 期間は固定の年月で示し、「現在」などの時間で古くなる書き方は避ける。
 // 詳細な担当範囲はスキルシートに任せ、ここは概要とタグだけにする。
+// 直近の3件だけを載せる(古い経歴は載せない)。
 export const experienceArray: ExperienceItemType[] = [
   {
     period: '2026年6月〜',
@@ -38,27 +39,5 @@ export const experienceArray: ExperienceItemType[] = [
       'Claude API',
       'OpenAI API',
     ],
-  },
-  {
-    period: '2025年4月〜2025年10月',
-    title: 'Web サイトの運用ディレクション',
-    text: '更新依頼の優先付けと進行管理、定例会の運営、見積・請求書の作成まで担当。',
-  },
-  {
-    period: '2022年11月〜2025年3月',
-    title: 'FAQ サイトの制作・進行管理',
-    text: '顧客折衝から設計・実装まで担当。テンプレート化で制作の工数を削減し、リーダーも経験。',
-    skills: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'PHP'],
-  },
-  {
-    period: '2022年1月〜2022年10月',
-    title: 'Web 開発の研修と実務のスタート',
-    text: '研修のあと、Web サイトのテストと不具合修正、チャットツールの運用サポートを経験。',
-    skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel'],
-  },
-  {
-    period: '2017年7月〜2021年12月',
-    title: '通信業のカスタマーサポート(SV)',
-    text: 'オペレーターの育成、KPI 管理、業務改善を担当。',
   },
 ];
