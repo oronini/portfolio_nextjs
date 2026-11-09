@@ -126,7 +126,7 @@ export async function POST(req: NextRequest) {
     from: process.env.MAIL_USER,
     replyTo: email,
     to: process.env.MAIL_USER,
-    subject: `【お問合せ】portfolioサイトから${name}様より`,
+    subject: `【お問い合わせ】Nekodesk サイトから${name}様より`,
     text: `${text} send from ${email}`,
     html: `
       <p>【名前】</p>
