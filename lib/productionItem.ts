@@ -1,4 +1,18 @@
+import { BLOG_URL } from '@/lib/blog';
+
 export const productionItemArray: ProductionProps[] = [
+  {
+    linkHref: BLOG_URL,
+    imgPath: 'blogSite.png',
+    alt: 'AI 運用ブログのサイトイメージ',
+    title: 'AI 運用ブログ',
+    skills:
+      'Astro / TypeScript / Tailwind CSS / Cloudflare / GitHub Actions / Claude Code / Playwright',
+    topText:
+      '運用の約 8 割を AI エージェントに任せているブログです。企画・執筆・画像・公開・告知から、分析・改善まで自動化しています。',
+    pageText:
+      '運用の約 8 割を AI エージェントに任せているブログです。企画・執筆・画像・公開・告知から、分析・改善まで自動化しています。\n人が担当するのは、ネタの提供と、下書きの確認・公開の承認です。\nAstro と Cloudflare で作った静的サイトで、記事は Git 上の Markdown を正とし、PR のマージが公開になります。\n下書きと見出し画像の用意、禁止表現や秘密情報の混入チェックは AI が担当し、公開(ブログ → note → X・Threads)も手順をスキルにして自動化しています。\n公開の前には必ず人の承認を挟み、AI が勝手に公開しない設計にしています。\n文体のルールもスキルとして蓄積し、指摘のたびに記事全体へ反映する仕組みです。',
+  },
   {
     linkHref: 'https://typing-games-ts.web.app/',
     imgPath: 'typingGame.png',
