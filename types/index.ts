@@ -59,3 +59,17 @@ type MenuItem = {
   // 外部サイトへのリンク(別タブで開き、アイコンを付ける)
   external?: boolean;
 };
+
+type LegalSection = {
+  heading: string;
+  // 段落ごとの配列。リストにする項目は items に入れる
+  paragraphs?: string[];
+  items?: string[];
+};
+
+type LegalPageData = {
+  title: string;
+  subTitle: string;
+  lead: string;
+  sections: LegalSection[];
+};
