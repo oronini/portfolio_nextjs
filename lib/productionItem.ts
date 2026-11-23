@@ -14,6 +14,18 @@ export const productionItemArray: ProductionProps[] = [
       '運用の約 8 割を AI エージェントに任せているブログです。企画・執筆・画像・公開・告知から、分析・改善まで自動化しています。\n人が担当するのは、ネタの提供と、下書きの確認・公開の承認です。\nAstro と Cloudflare で作った静的サイトで、記事は Git 上の Markdown を正とし、PR のマージが公開になります。\n下書きと見出し画像の用意、禁止表現や秘密情報の混入チェックは AI が担当し、公開(ブログ → note → X・Threads)も手順をスキルにして自動化しています。\n公開の前には必ず人の承認を挟み、AI が勝手に公開しない設計にしています。\n文体のルールもスキルとして蓄積し、指摘のたびに記事全体へ反映する仕組みです。',
   },
   {
+    linkHref: 'https://my-training-timer.pages.dev/',
+    imgPath: 'trainingTimer.png',
+    alt: 'トレーニングタイマーのサイトイメージ',
+    title: 'トレーニングタイマー',
+    skills:
+      'React / TypeScript / Vite / Bun / Web Audio API / sessionStorage / Cloudflare Pages',
+    topText:
+      'ストレッチやトレーニングのメニューを、秒数・回数とセット数に合わせて順番に進められるタイマーです。',
+    pageText:
+      'ストレッチやトレーニングのメニューを、秒数・回数とセット数に合わせて順番に進められるタイマーです。\n秒数を計るメニューと、回数を自分で数えて完了するメニューに対応しています。セットごとに開始を待つため、自分のペースで進められます。\n残り 3 秒からのカウント音、終了音、音量調整に対応しています。ページを再読み込みしても、同じタブなら進捗を復元できます(計測中だった場合は、一時停止の状態から再開します)。\n標準メニューは JSON で管理し、自分で用意した JSON ファイルに切り替えることもできます。',
+  },
+  {
     linkHref: 'https://typing-games-ts.web.app/',
     imgPath: 'typingGame.png',
     alt: 'typingGameサイトイメージ',
