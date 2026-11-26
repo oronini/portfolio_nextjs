@@ -14,6 +14,18 @@ export const productionItemArray: ProductionProps[] = [
       '運用の約 8 割を AI エージェントに任せているブログです。企画・執筆・画像・公開・告知から、分析・改善まで自動化しています。\n人が担当するのは、ネタの提供と、下書きの確認・公開の承認です。\nAstro と Cloudflare で作った静的サイトで、記事は Git 上の Markdown を正とし、PR のマージが公開になります。\n下書きと見出し画像の用意、禁止表現や秘密情報の混入チェックは AI が担当し、公開(ブログ → note → X・Threads)も手順をスキルにして自動化しています。\n公開の前には必ず人の承認を挟み、AI が勝手に公開しない設計にしています。\n文体のルールもスキルとして蓄積し、指摘のたびに記事全体へ反映する仕組みです。',
   },
   {
+    linkHref: 'https://pet-health.nekodesk.net/landing',
+    imgPath: 'petHealth.png',
+    alt: 'ペット体調記録アプリの紹介ページイメージ',
+    title: 'ペット体調記録アプリ',
+    skills:
+      'Next.js 16 (App Router / Server Actions) / React 19 / TypeScript / Tailwind CSS 4 / shadcn/ui (Radix UI) / react-hook-form / Zod / Supabase (PostgreSQL / Auth / Row Level Security) / Vercel / GitHub Actions / Resend / Cloudflare Turnstile / Vitest / Playwright',
+    topText:
+      'ペットの食事・水・トイレ・投薬などを記録して、体調の変化に気づきやすくする Web アプリです。',
+    pageText:
+      'ペットの食事・水・トイレ・投薬などを記録して、体調の変化に気づきやすくする Web アプリです。個人で開発・運営しています。\n選ぶだけの健康記録、傾向がわかるホーム画面、呼吸回数の計測、通院・投薬の予定管理に対応し、複数のペットをスマホでも PC でも記録できます。\nほかの家族のデータは Row Level Security で DB の層から見えないようにし、暗号化バックアップと毎日の運用レポートも自動化しています。',
+  },
+  {
     linkHref: 'https://my-training-timer.pages.dev/',
     imgPath: 'trainingTimer.png',
     alt: 'トレーニングタイマーのサイトイメージ',
