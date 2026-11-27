@@ -26,7 +26,7 @@ export const experienceArray: ExperienceItemType[] = [
   {
     period: '2025年4月〜2026年2月',
     title: 'Web アプリケーションの開発・運用',
-    text: '複数案件で、設計から実装、運用まで担当。小規模案件では技術選定を主導。',
+    text: '複数案件で、設計から実装、運用まで担当。小規模案件では技術選定を主導し、チームリーダーも担当。',
     skills: [
       'Next.js',
       'TypeScript',
