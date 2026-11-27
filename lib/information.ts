@@ -20,6 +20,7 @@ export const skillArray: skillArrayType[] = [
     skills: [
       'React',
       'Next.js',
+      'Astro',
       'React Router',
       'Node.js',
       'Hono',
@@ -56,6 +57,7 @@ export const skillArray: skillArrayType[] = [
       'AWS Lambda',
       'Serverless Framework',
       'Microsoft Azure',
+      'Cloudflare',
       'Docker',
       'Vercel',
       'Netlify',
@@ -74,7 +76,13 @@ export const skillArray: skillArrayType[] = [
   },
   {
     title: 'API / 連携',
-    skills: ['REST API', 'GraphQL', 'LINE API', 'SharePoint Online API'],
+    skills: [
+      'REST API',
+      'GraphQL',
+      'LINE API',
+      'SharePoint Online API',
+      'Resend',
+    ],
   },
   {
     title: 'AI',
@@ -94,4 +102,13 @@ export const skillArray: skillArrayType[] = [
   },
 ];
 
-export const hobbyArray = ['自作PC', 'アニメ', '猫', '漫画', 'ガンプラ作成'];
+export const hobbyArray = [
+  '自作PC',
+  'アニメ',
+  '猫',
+  '漫画',
+  'ガンプラ作成',
+  '散歩',
+  'ガジェット集め',
+  'キーボード',
+];
